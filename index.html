@@ -1,196 +1,2070 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+ 
+
+
+
+
 <head>
-<meta charset="UTF-8">
-<title>لوحة التحكم</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=12, IE=11, IE=10; IE=9; IE=8; IE=7; IE=EDGE"/>
+    <title>جامعة الملك خالد
+    </title>
+    <LINK REL=StyleSheet HREF='/kku/include/css/style.css' TYPE="text/css">
+    <link REL=StyleSheet type="text/css" href="/kku/include/css/bootstrap.min.css"/>
+    <link href="/kku/include/css/styles_ar.css" rel="stylesheet"
+          type="text/css"/>
+    <link REL=StyleSheet type="text/css" href="/kku/include/css/responsive.css"/>
+    <script type="text/javascript" src="/kku/include/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/kku/include/js/responsive.js"></script>
+    <link rel="stylesheet"
+          href="/kku/skins/2/style_ar.css"/>
+    <link rel="stylesheet"
+          href="/kku/skins/2/primeui/theme_ar.css"/>
+    <link rel="stylesheet"
+          href="/kku/include/primeui/primeui_ar.css"/>
+    <script type="text/javascript"
+            src="/kku/include/primeui/primeui.js"></script>
+    <script type="text/javascript"
+            src="/kku/include/js/common/primeUI.js"></script>
+    <link rel="stylesheet"
+          href="/kku/include/primeui/jquery-ui.css"/>
+    <script type="text/javascript"
+            src="/kku/include/primeui/jquery.js"></script>
+    <script type="text/javascript"
+            src="/kku/include/primeui/jquery-ui.js"></script>
+    <script type="text/javascript"
+            src="/kku/include/js/common/primeUI-v1.js"></script>
+    <script language="javascript" type="text/javascript">
+        function agreeFunction() {
+            document.getElementById("light").style.display = 'none';
+            document.getElementById("fade").style.display = 'none';
+        }
+        function printPage() {
+            try {
+                var cmd = document.getElementById("myFrm:printLink");
+                cmd.onclick();
+            } catch (e) {
+                window.print();
+            }
+        }
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: "Segoe UI", Tahoma;
-  background:#f4f6f7;
-  color:#333;
-}
+        function writeConsole(content, title) {
+            showDoneDialogMsgTitleWHPrimeUI(content, title, 500, 500);
+        }
 
-/* الهيدر */
-.header{
-  background:#fff;
-  border-bottom:4px solid #2f6f4e;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.header .right span{
-  margin-left:20px;
-  font-size:14px;
-  color:#555;
-}
-.header .right .active{
-  color:#2f6f4e;
-  font-weight:bold;
-}
-.header h2{
-  margin:0;
-  color:#2f6f4e;
-}
 
-/* بطاقة البيانات */
-.info-card{
-  width:92%;
-  margin:20px auto;
-  background:#fff;
-  border-radius:10px;
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-.info{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:14px;
-}
-.info strong{color:#2f6f4e}
-.gpa{font-size:18px;font-weight:bold}
+        url = '/kku/images/scopeImage.jpg';
 
-/* شريط الخدمات */
-.nav{
-  width:92%;
-  margin:auto;
-  background:#5f8f73;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:8px;
-}
-.nav span{
-  margin-left:25px;
-  font-size:14px;
-}
+        function openWindow(url) {
+            window.open(url, 'mywindow', 'width=800,height=550,resizable=yes,scrollbars=yes');
+            return false;
+        }
 
-/* التنبيه */
-.notice{
-  width:92%;
-  margin:20px auto;
-  background:#fff;
-  border:2px solid #5f8f73;
-  border-radius:10px;
-  padding:16px;
-  color:#2f6f4e;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-/* البطاقات */
-.dashboard{
-  width:92%;
-  margin:20px auto;
-  background:#fff;
-  border-radius:10px;
-  padding:30px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-}
-.card{
-  border:1px solid #e5e5e5;
-  border-radius:10px;
-  padding:35px 10px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-.card:hover{
-  background:#f3f8f5;
-  transform:translateY(-4px);
-}
-.card .icon{
-  font-size:38px;
-  color:#5f8f73;
-  margin-bottom:10px;
-}
-.card p{
-  margin:0;
-  font-size:15px;
-}
-.card.wide{
-  grid-column:span 2;
-}
-</style>
+        function openPopWindow() {
+            var url = '/kku/images/scopeImage.jpg';
+            window.open(url, 'mywindow', 'width=800,height=550,resizable=yes,scrollbars=yes');
+            return false;
+        }
+    </script>
 </head>
+<body style="max-width: 100vw;">
 
-<body>
+<form id="loginMessageForm" name="loginMessageForm" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="loginMessageForm" value="loginMessageForm" />
 
-<!-- الهيدر -->
-<div class="header">
-  <div class="right">
-    <span>English</span>
-    <span>خروج</span>
-    <span class="active">الرئيسية</span>
-    <span>بياناتي</span>
-  </div>
-  <h2>موقعي الشخصي</h2>
+<div id="light" class="white_content">
+    <div id="head_topic">
+        <div id="head_text">
+            <p class="inline"></p><h4 class="inline"><span id="loginMessageForm:id_904">محتوى المقرر</span></h4>
+            <p></p>
+        </div>
+    </div>
+    <div id="lightbox">
+        <div id="lightbox_text">
+            <ul id="about_text_ul">
+                <li><h6>
+                    
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+    function openFile(fileName) {
+        var file = '../../../../pdf/pdf/courseContent/' + fileName;
+        window.open(file, '_newtab');
+    }
+</script>
+
+<form id="loginMessageForm:frmCourseContect" name="loginMessageForm:frmCourseContect" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="loginMessageForm:frmCourseContect" value="loginMessageForm:frmCourseContect" />
+
+    
+    
+        <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:99%; word-break: keep-all;">
+            <tr>
+                <td align="right">
+                    <span id="loginMessageForm:frmCourseContect:id_904_1" class="fontText">لاستعراض محتوى المقرر</span>&nbsp;[&nbsp;
+                    <span id="loginMessageForm:frmCourseContect:id_904_courseName" class="fontText"></span>&nbsp;]&nbsp;
+                    <span id="loginMessageForm:frmCourseContect:id_904_2" class="fontText">اضغط على الازرار</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='center' colspan="2">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width:80%;">
+                        <tr>
+                            <td>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                                    <tr>
+                                        <td valign="middle" height="22">
+                                            
+                                            
+                                                <span id="loginMessageForm:frmCourseContect:errMsgAr904" class="fontTextRed">لايتوفر محتوى باللغة العربية</span>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="60"></td>
+                            <td>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                                    <tr>
+                                        <td valign="middle" height="22">
+                                            
+                                            
+                                                <span id="loginMessageForm:frmCourseContect:errMsgEn904" class="fontTextRed">لا يتوفر محتوى باللغة الانجليزية</span>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    
+<input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:0" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+
+
+                </h6></li>
+            </ul>
+        </div>
+    </div>
+    <div id="light_box_button">
+        <script type="text/javascript" src="/kku/javax.faces.resource/jsf.js.faces?ln=javax.faces"></script><a id="loginMessageForm:ligh_box_btn_agree" href="#" onmousedown="javascript:agreeFunction();" onclick="mojarra.jsfcljs(document.getElementById('loginMessageForm'),{'loginMessageForm:ligh_box_btn_agree':'loginMessageForm:ligh_box_btn_agree'},'');return false" class="ligh_box_btn"><span id="loginMessageForm:ligh_box_btn_agree_txt"><h1>اغلاق</h1></span></a>
+    </div>
+</div>
+<div id="fade" class="black_overlay"></div>
+
+    <input id="loginMessageForm:clickCourse" type="hidden" name="loginMessageForm:clickCourse" value="false" /><input id="loginMessageForm:financialHalted" type="hidden" name="loginMessageForm:financialHalted" value="false" /><a id="loginMessageForm:questionnaireClkOpen" href="#" onclick="mojarra.jsfcljs(document.getElementById('loginMessageForm'),{'loginMessageForm:questionnaireClkOpen':'loginMessageForm:questionnaireClkOpen'},'');return false"></a><input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:1" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+
+
+
+                 
+
+
+<div id="dlgPrint" title='&nbsp;طباعة' style="display:none" >
+    <table align="left" cellpadding="0" cellspacing="0">
+        <tr><td><a id="printFrameLink" name="printFrameLink" href="" onclick="javascript:printFrame('framePrint');return false;" class="printButton"></a></td></tr>
+    </table>
+    <iframe id="framePrint" width="1" height="1" frameborder="0"></iframe>
 </div>
 
-<!-- بطاقة المعلومات -->
-<div class="info-card">
-  <div class="info">👤 الاسم: <strong>اسمك هنا</strong></div>
-  <div class="info">🆔 الرقم: <strong>445807980</strong></div>
-  <div class="info">🎓 التخصص: <strong>نظم معلومات</strong></div>
-  <div class="info">📊 المعدل: <strong class="gpa">4.64</strong></div>
-  <div class="info">📌 الحالة: <strong>منتظم</strong></div>
-  <div class="info">🎓 الدرجة: <strong>بكالوريوس</strong></div>
-  <div class="info">📍 الموقع: <strong>المدينة الجامعية</strong></div>
-  <div class="info">👨‍🏫 المرشد: <strong>—</strong></div>
+<div id="dlgPrintPDF" title='&nbsp;طباعة' style="display:none" >
+    <iframe id="framePrintPDF" width="1" height="1" frameborder="0"></iframe>
 </div>
 
-<!-- شريط الخدمات -->
-<div class="nav">
-  <span>الخدمات الأكاديمية</span>
-  <span>الجدول والخطة</span>
-  <span>شخصي</span>
-  <span>التقارير</span>
-  <span>التواصل والدعم</span>
+<div id="msgBar"  style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td align="center" class="fontText" ><label id="msgLabel"></label></td>
+            <td width="12"></td>
+            <td ><div class="pui-growl-image-warn-image"></div></td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
+</div>      
+
+<div id="msgInfoBar"  style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td align="center" class="fontText" ><label id="msgInfoLabel"></label></td>
+            <td width="12"></td>
+            <td ><div class="pui-growl-image-info-image"></div></td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
+</div>      
+
+
+<div id="msgDialog"  title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td align="center" class="fontText" ><label id="msgDialogLabel"></label></td>
+            <td width="12"></td>
+            <td ><div class="pui-growl-image-warn-image"></div></td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
 </div>
 
-<!-- تنبيه -->
-<div class="notice">
-  <div>📩 دليل استخدام الموقع</div>
-  <div>اضغط هنا</div>
+<div id="doneMsgDialog"  title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td align="center" class="toolTipText" ><label style="font-color:green" id="doneMsgDialogLabel"></label></td>
+            <td width="12"></td>
+            <td ><div class="pui-growl-image-done-image"></div></td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
 </div>
 
-<!-- البطاقات -->
-<div class="dashboard">
-  <div class="cards">
-    <div class="card">
-      <div class="icon">📄</div>
-      <p>التقارير</p>
-    </div>
-    <div class="card">
-      <div class="icon">👤</div>
-      <p>شخصي</p>
-    </div>
-    <div class="card">
-      <div class="icon">📘</div>
-      <p>الجدول والخطة الدراسية</p>
-    </div>
-    <div class="card">
-      <div class="icon">🖥</div>
-      <p>الخدمات الأكاديمية</p>
-    </div>
-    <div class="card wide">
-      <div class="icon">✉</div>
-      <p>التواصل والدعم</p>
-    </div>
-  </div>
+
+<div id="msgLoadDialog"  title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td align="center" class="fontText" ><label id="msgLoadDialogLabel"></label></td>
+            <td width="12"></td>
+            <td>
+                <img src="/kku/images/loading2.gif" style="border-width: 0pt;" />
+            </td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
 </div>
 
+<div id="confDialog" title=""  style="display: none;">
+  <table align="left" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td height="5" ></td></tr>
+        <tr>
+            <td><label id="confMsgLable"></label></td>
+        </tr>
+        <tr><td height="5" ></td></tr>
+    </table>
+</div>
+
+<div class="fontText" id="msgGrowl" ></div>
+<div id="main" class="int_page">
+    
+<form id="headerFrm" name="headerFrm" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded" style="margin-bottom: 118px;">
+<input type="hidden" name="headerFrm" value="headerFrm" />
+
+    <div id="header" style="max-width: 100vw; min-width: 97vw;">
+        <div id="nav-bar" style="min-height: 98px; max-height: 98px;">
+            <div class="container">
+                <div class="siteLogo">
+                    <img src="/kku/images/NewIcons/kku-logo-header.png" alt="kkuLogo"/>
+                </div>
+                <div id="mobileMenu" style="display: none;">
+                    <img id="menuIcon" src="/kku/images/menuIcon/menuiconn.png" style="margin: 2rem; height: 2rem; filter: brightness(0) saturate(1) invert(44%) sepia(30%) saturate(4) hue-rotate(90deg) brightness(95%) contrast(83%);">
+                    <ul style="display: none;" id="mobileMenuItems">
+                        <li>
+                            <a href="#" onclick="openPopWindow();"><img id="headerFrm:sayid2" src="/kku/temp/87231_2_2.jpg" height="55" style="border-top-left-radius: 10px; border-top-right-radius: 10px; width: 100%; margin-top: 0; height: 98px;" /></a>
+                        </li>
+                        <li>
+                            <a id="headerFrm:myData2" name="headerFrm:myData2" href="/kku/ui/student/student_info/index/myInfoIndex.faces">
+                                <img src="/kku/images/NewIcons/person.png" alt="logout"/>
+                                <h4>بياناتي</h4></a>
+                        </li>
+                        <li>
+                            <a href="/kku/ui/student/homeIndex.faces">
+                                <img src="/kku/images/NewIcons/home.png" alt="home"/>
+                                <h4>الرئيسية</h4></a>
+                        </li>
+                        
+                            <li>
+                                <a id="headerFrm:signoutLink2" href="#" onclick="mojarra.jsfcljs(document.getElementById('headerFrm'),{'headerFrm:signoutLink2':'headerFrm:signoutLink2'},'');return false">
+                                    <img src="/kku/images/NewIcons/logout.png" alt="logout"/>
+                                    <h4>خروج</h4></a>
+                            </li>
+                        
+                        <li>
+                            <a href="#" onclick="mojarra.jsfcljs(document.getElementById('headerFrm'),{'headerFrm:j_id_id61':'headerFrm:j_id_id61'},'');return false">
+                                <img src="/kku/images/NewIcons/globe.png" alt="logout"/>
+                                <h4>English</h4></a>
+                        </li>
+                    </ul>
+                </div>
+                <style>
+                    @media (max-width: 767px) {
+                        .siteLogo {
+                            margin-inline-end: 1rem;
+                        }
+                        .siteMenu {
+                            display: none;
+                        }
+                        #mobileMenu {
+                            display: block !important;
+                        }
+                    }
+                    #mobileMenu:hover #mobileMenuItems {
+                        top: 4.5rem;
+                        display: block !important;
+                        width: 6rem !important;
+                        inset-inline-end: 1rem;
+                        background-color: white;
+                        box-shadow: rgba(99, 99, 99, 0.5) 2px 4px 10px 2px;
+                        border-radius: 10px;
+                        position: absolute;
+                        z-index: 100000;
+                    }
+                    #mobileMenu #mobileMenuItems {
+                        transform: translateY(20px);
+                        transition: all .3s ease;
+                    }
+                    @media (max-width: 1024px) and (min-width: 768px) {
+                        .siteLogo img {
+                            content: url(/kku/images/kku-logo-min.png);
+                        }
+                    }
+                    @media (max-width: 505px) {
+                        .siteLogo img {
+                            content: url(/kku/images/kku-logo-min.png);
+                        }
+                    }
+                    a .gparange {
+                        width: 90px !important;
+                        height: 90px !important;
+                        margin-top: 0 !important;
+                    }
+                </style>
+                <div class="siteMenu">
+                    <ul style="height: 90px;">
+                        <li style="width: 100px;">
+                            <a href="#" onclick="openPopWindow();" class="d-flex-C topBarLink"><img id="headerFrm:sayid" src="/kku/temp/87231_2_2.jpg" height="55" width="80" class="head-logo gparange" /></a>
+                        </li>
+                        <li>
+                            <a id="headerFrm:myData" name="headerFrm:myData" href="/kku/ui/student/student_info/index/myInfoIndex.faces" style="height: 90px; width: 100px;">
+                                <img src="/kku/images/NewIcons/person.png" alt="logout"/>
+                                <h4>بياناتي</h4></a>
+                        </li>
+                        <li style="width: 100px;">
+                            <a href="/kku/ui/student/homeIndex.faces" style="height: 90px; width: 100px; padding-inline: 1rem;" class="active">
+                                <img src="/kku/images/NewIcons/home.png" alt="home"/>
+                                <h4>الرئيسية</h4></a>
+                        </li>
+                        
+                        <li>
+                            <a id="headerFrm:signoutLink" href="#" style="height: 90px; width: 100px;" onclick="mojarra.jsfcljs(document.getElementById('headerFrm'),{'headerFrm:signoutLink':'headerFrm:signoutLink'},'');return false">
+                                <img src="/kku/images/NewIcons/logout.png" alt="logout"/>
+                                <h4>خروج</h4></a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" style="height: 90px; width: 100px;" onclick="mojarra.jsfcljs(document.getElementById('headerFrm'),{'headerFrm:j_id_id72':'headerFrm:j_id_id72'},'');return false">
+                                <img src="/kku/images/NewIcons/globe.png" alt="logout"/>
+                                <h4>English</h4></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:2" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+    <div class="container">
+        <div class="headerContent">
+            <div class="row header-row" style="display: grid;">
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/person.png" alt="personIcon"/>
+                        <div class="text main">
+                            
+
+                                
+                                    <p class="studentInfoPrivate"><span id="studNameText"><h1>شعيل ابو غبران القحطاني</h1></span></p>
+                                
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/studentId.png" alt="studentId"/>
+                        <div class="text">
+
+                            <p class="studentInfoPrivate"><span id="uniNoText"><h1>445807980</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/field.png" alt="fieldTwo"/>
+                        <div class="text">
+
+                            <p class="studentInfoPrivate"><span id="majorNameDesc"><h1>نظم المعلومات</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/college.png" alt="field"/>
+                        <div class="text">
+                            
+                            <p class="studentInfoPrivate"><span id="facultyNameDesc"><h1>علوم الحاسب - المدينة الجامعية بالفرعاء</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/Degree.png" alt="fieldTwo"/>
+                        <div class="text">
+                            <p class="studentInfoPrivate"><span id="stddegree"><h1>بكالوريوس</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/studentStatus.png" alt="fieldTwo"/>
+                        <div class="text">
+                            <p class="studentInfoPrivate"><span id="stdstatus"><h1>منتظم</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studentInfoHeader">
+                        <img src="/kku/images/NewIcons/Average.png" alt="fieldTwo"/>
+                        <div class="text">
+                            <p class="studentInfoPrivate"><span id="studgpa"><h1><strong>المعدل التراكمي:</strong> 2.21</h1></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    
+                        <div class="studentInfoHeader">
+                            <img src="/kku/images/NewIcons/academicMentor.png"/>
+                            <div class="text">
+                                <p class="studentInfoPrivate"><span id="studadvisor"><h1><strong>المرشد الاكاديمي:</strong> د. حسام فاروق حسن الصوفانى</h1></span></p>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+
+
+
+
+<script type="text/javascript"
+        src="/kku/include/js/common/ajaxHome.js"></script>
+<script language="javascript" type="text/javascript">
+    function ajaxCategoryMenu(id, value) {
+        if (id.getAttribute("aria-expanded") == 'false') {
+            onAjaxHome('studentCategory', value + "");
+        } else {
+            onAjaxHome('studentCategory', '-1');
+        }
+    }
+    function uploadImagePage() {
+        document.getElementById("menuForm:commandUploadImageService").onclick();
+    }
+</script>
+
+
+    
+<form id="menuForm2" name="menuForm2" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="menuForm2" value="menuForm2" />
+
+        <nav id="serMenu" dir="rtl" style="width: 100%; margin-top: 1rem; border-radius: 10px; box-shadow: rgba(99, 99, 99, 0.4) 2px 4px 10px 2px;">
+            <div class="navbar">
+                
+                    <ul class="nav-links">
+                        
+                                
+                                <li class="dropdown">
+                                    <a href="#">
+                                        الخدمات الأكاديمية
+                                        <span class=caret></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        
+                                            
+                                                <a href="/kku/ui/student/show_all_transactions/index/forwardShowAllTransactionsIndex.faces">متابعة حالة الطلبات</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/studentAppointment/index/forwardAppointmen.faces">حجز موعد مع المرشد الأكاديمي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_absences/index/courseAbsencesIndex.faces">حالة الغياب والتأخير</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/conditionsAbsenceWeather/index/conditionsAbsenceWeatherMainIndex.faces">طلب غياب بسبب الطقس</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/entered_transactions/index/forwardEnteredTransactionsIndex.faces">إدخال حركة أكاديمية اعتيادية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/request_exceptional_academic_movement/index/requestExceptionalAcademicMovementIndex.faces">إدخال حركة أكاديمية استثنائية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/request_Major_change/index/mainMajorChangeIndex.faces">طلب تغيير تخصص</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/withdrawal_course/index/forwardWithdrawalCourseIndex.faces">طلب اعتذار عن مقرر</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/external_equivalent_request/index/equivalenAgreementIndex.faces">طلب معادلة خارجية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/recorrection_request/index/mainRecorrectionRequestIndex.faces">طلب إعادة التصحيح</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/request_specify_stream/index/mainRequestSpecifyStreamIndex.faces">طلب تحديد مسار</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/transfer_exit_points/index/transferRequestExitPointsMainIndex.faces">طلب التحويل إلى نقاط الخروج</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/request_change_study_type/index/mainChangeStudyTypeIndex.faces">طلب تغيير نوع الدراسة</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/request_Degree_Major_change/index/mainDegreeMajorChangeIndex.faces">طلب تغيير درجة علمية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/electronicStatement/index/forwardElectronicStatement.faces">إدخال تعهد لتدني المعدل</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/withdrawal_transactions/index/mainWithdrawalTransactionsIndex.faces">طلب انسحاب من الجامعة</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_rewards/index/forwardStudentRewards.faces">المكافآت المصروفة</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_punishments/index/studentPunishmentsIndex.faces">العقوبات</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/admission_choices/index/forwardAdmissionChoices.faces">طلب إدخال رغبات التخصيص</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                    </div>
+                                </li>
+                            
+                        
+                                
+                                <li class="dropdown">
+                                    <a href="#">
+                                        الجدول والخطة الدراسية
+                                        <span class=caret></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_plan/index/forwardAllPlanIndex.faces">الخطة الدراسية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_schedule/index/forwardStudentSchedule.faces">الجدول الدراسي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/offeredCourses/index/offeredCoursesIndex.faces">المقررات المطروحة</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/registration/index/forwardMainReg.faces">تسجيل المقررات (الحذف والإضافة)</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/registration_requests/index/mainRegistrationRequestsIndex.faces">تقديم طلب تعديل الجدول (مسجل الكلية)</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/registration/index/forwardVisitor.faces">طلب زائر داخلي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/visitor_candidacy/index/visitorStudentMainIndex.faces">طلب زائر خارجي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_plan/index/studentTakenPlanIndex.faces">المقررات المجتازة</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_plan/index/studentRemainPlanIndex.faces">المقررات المتبقية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/final_exams/index/finalExamsIndex.faces">جدول الاختبارات النهائية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/courses_results/index/forwardCoursesResults.faces">استعراض درجات المقررات</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/markExpected/index/markExpectedIndex.faces">حساب المعدل المتوقع</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_transcript/index/studentTranscriptAllIndex.faces">السجل الأكاديمي الإلكتروني</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/onlinePayment/index/forwardPaymentIndex.faces">الدفع الإلكتروني</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_evaluation/index/forwardTypes.faces">تقييم المحاضرين</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                    </div>
+                                </li>
+                            
+                        
+                                
+                                <li class="dropdown">
+                                    <a href="#">
+                                        شخصي
+                                        <span class=caret></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_info/index/myInfoIndex.faces">بياناتي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/book_borrowing/index/bookBorrowingIndex.faces">مكتبتي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/university_card/index/forwordUniversityCardIndex.faces">البطاقة الرقمية</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <a href="/kku/ui/student/uploadstudentimage/index/forwardStudentImage.faces">تحميل الصورة الشخصية</a>
+                                            
+                                            
+                                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/updateNationalAddress/index/updateNationalAddressIndex.faces">تحديث العنوان الوطني</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/change_nationality/index/forwardChangeNationality.faces">تعديل تاريخ الميلاد</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_iban/index/forwardIBANAcceptIndex.faces">تحديث الآيبان</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_loans/index/mainStudentLoansIndex.faces">متابعة طلبات السلف والإعانات</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/questionnaires/index/forwardQuestionnaires.faces">الاستبانات</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_disclaimer/index/forwardStudentDisclaimer.faces">حالات إخلاء الطرف</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                    </div>
+                                </li>
+                            
+                        
+                                
+                                <li class="dropdown">
+                                    <a href="#">
+                                        التقارير
+                                        <span class=caret></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        
+                                            
+                                                <a href="/kku/ui/student/reports/index/forwardReports.faces">المستندات الرسمية والنماذج</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                    </div>
+                                </li>
+                            
+                        
+                                
+                                <li class="dropdown">
+                                    <a href="#">
+                                        التواصل والدعم
+                                        <span class=caret></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        
+                                            
+                                                <a href="/kku/ui/student/comunicateWithAdvisor/index/comincateWithAdvisorIndex.faces">تواصل مع المرشد الأكاديمي</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/sendEmail/index/sendEmailIndex.faces">تواصل مع المحاضر (بريد إلكتروني)</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                            
+                                                <a href="/kku/ui/student/student_petition/index/mainStudentPetitionIndex.faces">تواصل مع الجهات الأخرى</a>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        
+                                    </div>
+                                </li>
+                            
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        </nav>
+        <style>
+            .menu-service {
+                color: white !important;
+                padding-inline: 1rem;
+                font-weight: bold;
+            }
+            .menu-service:hover {
+                color: #333333 !important;
+            }
+        </style>
+    <input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:3" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*font-family: Arial, sans-serif*/
+        }
+        nav {
+            background: rgba(78, 120, 94, 0.95);
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            padding-block: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            vertical-align: center;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: helvetica-NAL,Tahoma,Geneva,sans-serif;
+            transition: color .3s ease
+        }
+        .nav-links a:hover {
+            color: #333333
+        }
+        .dropdown {
+            position: relative;
+            min-width: fit-content;
+        }
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            background: rgba(78, 120, 94, 0.95);
+            min-width: max-content;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all .3s ease;
+            z-index: 10000;
+        }
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0)
+        }
+        .dropdown-content a {
+            /*border-bottom: 1px solid white;*/
+            border-top: 1px solid white;
+            color: white;
+            display: block;
+            transition: all .2s ease;
+            padding-inline: 0.4rem;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover {
+            background: #f8f9fa;
+        }
+        .caret {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: .5rem;
+            vertical-align: middle;
+            border-top: 5px solid;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            transition: transform .3s ease
+        }
+        .dropdown .caret {
+            transform: rotate(-90deg)
+        }
+        .dropdown:hover .caret {
+            transform: rotate(0deg)
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px)
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+        .navbar {
+            animation: slideDown .5s ease
+        }
+        .head_menu {
+            display: none;
+        }
+        @media (max-width: 1024px) {
+            .head_menu {
+                display: block;
+            }
+            #menuForm2 {
+                display: none !important;
+            }
+            #container-right {
+                display: block !important;
+                position: absolute;
+                margin-inline-start: 2rem;
+                top: 98px;
+                background-color: #577e66;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                width: 75px !important;
+            }
+            #headerFrm {
+                margin-bottom: 11rem !important;
+            }
+        }
+        .headerForm2 {
+            color: white;
+        }
+        .headerForm2:hover {
+            color: initial;
+        }
+        .login-panel-title, #login_form * {
+            font-family: helvetica-NAL;
+        }
+        #container-left {
+            width: 100%;
+        }
+        #container-right {
+            display: none;
+        }
+    </style>
+    <div id="container-right">
+        <div id='cssmenu'>
+            
+<form id="menuForm" name="menuForm" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="menuForm" value="menuForm" />
+<a id="menuForm:commandUploadImageService" href="#" onclick="mojarra.jsfcljs(document.getElementById('menuForm'),{'menuForm:commandUploadImageService':'menuForm:commandUploadImageService'},'');return false"></a><table id="menuForm:menuTable" border="0" cellpadding="0" cellspacing="0" style="display:none;" width="100%">
+<tbody>
+<tr>
+<td><div id="menuForm:menuTable:0:menuDiv"><h3 id='menuDivH3' onclick='javascript:ajaxCategoryMenu(this,0)'><table id="menuForm:menuTable:0:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الخدمات الأكاديمية</td>
+</tr>
+</tbody>
+</table>
+</h3><div id="menuForm:menuTable:0:Divs"><table id="menuForm:menuTable:0:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:0:services:0:urlMenu" name="menuForm:menuTable:0:services:0:urlMenu" href="/kku/ui/student/show_all_transactions/index/forwardShowAllTransactionsIndex.faces">متابعة حالة الطلبات</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:1:urlMenu" name="menuForm:menuTable:0:services:1:urlMenu" href="/kku/ui/student/studentAppointment/index/forwardAppointmen.faces">حجز موعد مع المرشد الأكاديمي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:2:urlMenu" name="menuForm:menuTable:0:services:2:urlMenu" href="/kku/ui/student/student_absences/index/courseAbsencesIndex.faces">حالة الغياب والتأخير</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:3:urlMenu" name="menuForm:menuTable:0:services:3:urlMenu" href="/kku/ui/student/conditionsAbsenceWeather/index/conditionsAbsenceWeatherMainIndex.faces">طلب غياب بسبب الطقس</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:4:urlMenu" name="menuForm:menuTable:0:services:4:urlMenu" href="/kku/ui/student/entered_transactions/index/forwardEnteredTransactionsIndex.faces">إدخال حركة أكاديمية اعتيادية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:5:urlMenu" name="menuForm:menuTable:0:services:5:urlMenu" href="/kku/ui/student/request_exceptional_academic_movement/index/requestExceptionalAcademicMovementIndex.faces">إدخال حركة أكاديمية استثنائية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:6:urlMenu" name="menuForm:menuTable:0:services:6:urlMenu" href="/kku/ui/student/request_Major_change/index/mainMajorChangeIndex.faces">طلب تغيير تخصص</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:7:urlMenu" name="menuForm:menuTable:0:services:7:urlMenu" href="/kku/ui/student/withdrawal_course/index/forwardWithdrawalCourseIndex.faces">طلب اعتذار عن مقرر</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:8:urlMenu" name="menuForm:menuTable:0:services:8:urlMenu" href="/kku/ui/student/external_equivalent_request/index/equivalenAgreementIndex.faces">طلب معادلة خارجية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:9:urlMenu" name="menuForm:menuTable:0:services:9:urlMenu" href="/kku/ui/student/recorrection_request/index/mainRecorrectionRequestIndex.faces">طلب إعادة التصحيح</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:10:urlMenu" name="menuForm:menuTable:0:services:10:urlMenu" href="/kku/ui/student/request_specify_stream/index/mainRequestSpecifyStreamIndex.faces">طلب تحديد مسار</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:11:urlMenu" name="menuForm:menuTable:0:services:11:urlMenu" href="/kku/ui/student/transfer_exit_points/index/transferRequestExitPointsMainIndex.faces">طلب التحويل إلى نقاط الخروج</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:12:urlMenu" name="menuForm:menuTable:0:services:12:urlMenu" href="/kku/ui/student/request_change_study_type/index/mainChangeStudyTypeIndex.faces">طلب تغيير نوع الدراسة</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:13:urlMenu" name="menuForm:menuTable:0:services:13:urlMenu" href="/kku/ui/student/request_Degree_Major_change/index/mainDegreeMajorChangeIndex.faces">طلب تغيير درجة علمية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:14:urlMenu" name="menuForm:menuTable:0:services:14:urlMenu" href="/kku/ui/student/electronicStatement/index/forwardElectronicStatement.faces">إدخال تعهد لتدني المعدل</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:15:urlMenu" name="menuForm:menuTable:0:services:15:urlMenu" href="/kku/ui/student/withdrawal_transactions/index/mainWithdrawalTransactionsIndex.faces">طلب انسحاب من الجامعة</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:16:urlMenu" name="menuForm:menuTable:0:services:16:urlMenu" href="/kku/ui/student/student_rewards/index/forwardStudentRewards.faces">المكافآت المصروفة</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:17:urlMenu" name="menuForm:menuTable:0:services:17:urlMenu" href="/kku/ui/student/student_punishments/index/studentPunishmentsIndex.faces">العقوبات</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:21:urlMenu" name="menuForm:menuTable:0:services:21:urlMenu" href="/kku/ui/student/admission_choices/index/forwardAdmissionChoices.faces">طلب إدخال رغبات التخصيص</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:1:menuDiv"><h3 id='menuDivH3' onclick='javascript:ajaxCategoryMenu(this,1)'><table id="menuForm:menuTable:1:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الجدول والخطة الدراسية</td>
+</tr>
+</tbody>
+</table>
+</h3><div id="menuForm:menuTable:1:Divs"><table id="menuForm:menuTable:1:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:1:services:0:urlMenu" name="menuForm:menuTable:1:services:0:urlMenu" href="/kku/ui/student/student_plan/index/forwardAllPlanIndex.faces">الخطة الدراسية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:1:urlMenu" name="menuForm:menuTable:1:services:1:urlMenu" href="/kku/ui/student/student_schedule/index/forwardStudentSchedule.faces">الجدول الدراسي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:2:urlMenu" name="menuForm:menuTable:1:services:2:urlMenu" href="/kku/ui/student/offeredCourses/index/offeredCoursesIndex.faces">المقررات المطروحة</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:3:urlMenu" name="menuForm:menuTable:1:services:3:urlMenu" href="/kku/ui/student/registration/index/forwardMainReg.faces">تسجيل المقررات (الحذف والإضافة)</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:4:urlMenu" name="menuForm:menuTable:1:services:4:urlMenu" href="/kku/ui/student/registration_requests/index/mainRegistrationRequestsIndex.faces">تقديم طلب تعديل الجدول (مسجل الكلية)</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:5:urlMenu" name="menuForm:menuTable:1:services:5:urlMenu" href="/kku/ui/student/registration/index/forwardVisitor.faces">طلب زائر داخلي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:6:urlMenu" name="menuForm:menuTable:1:services:6:urlMenu" href="/kku/ui/student/visitor_candidacy/index/visitorStudentMainIndex.faces">طلب زائر خارجي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:7:urlMenu" name="menuForm:menuTable:1:services:7:urlMenu" href="/kku/ui/student/student_plan/index/studentTakenPlanIndex.faces">المقررات المجتازة</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:8:urlMenu" name="menuForm:menuTable:1:services:8:urlMenu" href="/kku/ui/student/student_plan/index/studentRemainPlanIndex.faces">المقررات المتبقية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:9:urlMenu" name="menuForm:menuTable:1:services:9:urlMenu" href="/kku/ui/student/final_exams/index/finalExamsIndex.faces">جدول الاختبارات النهائية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:10:urlMenu" name="menuForm:menuTable:1:services:10:urlMenu" href="/kku/ui/student/courses_results/index/forwardCoursesResults.faces">استعراض درجات المقررات</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:11:urlMenu" name="menuForm:menuTable:1:services:11:urlMenu" href="/kku/ui/student/markExpected/index/markExpectedIndex.faces">حساب المعدل المتوقع</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:12:urlMenu" name="menuForm:menuTable:1:services:12:urlMenu" href="/kku/ui/student/student_transcript/index/studentTranscriptAllIndex.faces">السجل الأكاديمي الإلكتروني</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:13:urlMenu" name="menuForm:menuTable:1:services:13:urlMenu" href="/kku/ui/student/onlinePayment/index/forwardPaymentIndex.faces">الدفع الإلكتروني</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:14:urlMenu" name="menuForm:menuTable:1:services:14:urlMenu" href="/kku/ui/student/student_evaluation/index/forwardTypes.faces">تقييم المحاضرين</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:2:menuDiv"><h3 id='menuDivH3' onclick='javascript:ajaxCategoryMenu(this,2)'><table id="menuForm:menuTable:2:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;شخصي</td>
+</tr>
+</tbody>
+</table>
+</h3><div id="menuForm:menuTable:2:Divs"><table id="menuForm:menuTable:2:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:2:services:0:urlMenu" name="menuForm:menuTable:2:services:0:urlMenu" href="/kku/ui/student/student_info/index/myInfoIndex.faces">بياناتي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:1:urlMenu" name="menuForm:menuTable:2:services:1:urlMenu" href="/kku/ui/student/book_borrowing/index/bookBorrowingIndex.faces">مكتبتي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:2:urlMenu" name="menuForm:menuTable:2:services:2:urlMenu" href="/kku/ui/student/university_card/index/forwordUniversityCardIndex.faces">البطاقة الرقمية</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:3:urlMenuUploadStudentImage" name="menuForm:menuTable:2:services:3:urlMenuUploadStudentImage" href="/kku/ui/student/uploadstudentimage/index/forwardStudentImage.faces">تحميل الصورة الشخصية</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:5:urlMenu" name="menuForm:menuTable:2:services:5:urlMenu" href="/kku/ui/student/updateNationalAddress/index/updateNationalAddressIndex.faces">تحديث العنوان الوطني</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:6:urlMenu" name="menuForm:menuTable:2:services:6:urlMenu" href="/kku/ui/student/change_nationality/index/forwardChangeNationality.faces">تعديل تاريخ الميلاد</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:7:urlMenu" name="menuForm:menuTable:2:services:7:urlMenu" href="/kku/ui/student/student_iban/index/forwardIBANAcceptIndex.faces">تحديث الآيبان</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:8:urlMenu" name="menuForm:menuTable:2:services:8:urlMenu" href="/kku/ui/student/student_loans/index/mainStudentLoansIndex.faces">متابعة طلبات السلف والإعانات</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:9:urlMenu" name="menuForm:menuTable:2:services:9:urlMenu" href="/kku/ui/student/questionnaires/index/forwardQuestionnaires.faces">الاستبانات</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:10:urlMenu" name="menuForm:menuTable:2:services:10:urlMenu" href="/kku/ui/student/student_disclaimer/index/forwardStudentDisclaimer.faces">حالات إخلاء الطرف</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:3:menuDiv"><h3 id='menuDivH3' onclick='javascript:ajaxCategoryMenu(this,3)'><table id="menuForm:menuTable:3:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;التقارير</td>
+</tr>
+</tbody>
+</table>
+</h3><div id="menuForm:menuTable:3:Divs"><table id="menuForm:menuTable:3:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:3:services:0:urlMenu" name="menuForm:menuTable:3:services:0:urlMenu" href="/kku/ui/student/reports/index/forwardReports.faces">المستندات الرسمية والنماذج</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:4:menuDiv"><h3 id='menuDivH3' onclick='javascript:ajaxCategoryMenu(this,4)'><table id="menuForm:menuTable:4:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;التواصل والدعم</td>
+</tr>
+</tbody>
+</table>
+</h3><div id="menuForm:menuTable:4:Divs"><table id="menuForm:menuTable:4:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:4:services:0:urlMenu" name="menuForm:menuTable:4:services:0:urlMenu" href="/kku/ui/student/comunicateWithAdvisor/index/comincateWithAdvisorIndex.faces">تواصل مع المرشد الأكاديمي</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:4:services:1:urlMenu" name="menuForm:menuTable:4:services:1:urlMenu" href="/kku/ui/student/sendEmail/index/sendEmailIndex.faces">تواصل مع المحاضر (بريد إلكتروني)</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:4:services:2:urlMenu" name="menuForm:menuTable:4:services:2:urlMenu" href="/kku/ui/student/student_petition/index/mainStudentPetitionIndex.faces">تواصل مع الجهات الأخرى</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:4" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+            <script>
+                $("#menuForm tr a").each(function () {
+                    var a = $(this);
+                    if (a.text().length > 0) {
+                        a.closest('tr').addClass("tr-has-text");
+                    }
+                });
+            </script>
+        </div>
+    </div>
+
+<div id="container-left">
+    
+
+
+
+<input id="hiddenValue" type="hidden" name="hiddenValue" value="true" />
+<form id="messages" name="messages" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="messages" value="messages" />
+
+    
+        
+            <div id="user-mail">
+                <table border="0" cellpadding="1" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="mail-msg"><span class="mail-topic">دليل استخدام أكاديميا</span>عزيزي الطالب/ـة
+يمكنك الاطلاع على دليل استخدام أكاديميا من خلال الرابط التالي:
+<a href="https://tinyurl.com/3rp74ajk" target="_blank">اضغط هنا</a></td>
+</tr>
+</tbody>
+</table>
+
+                <div style="clear: both"></div>
+            </div>
+        
+    
+<input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:5" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+
+    <div id="system-content">
+        <script type="text/javascript">
+            var indexCat = parseInt('null');
+            var root = '/kku';
+            $(function () {
+                try {
+                    for (k = 0; k < 11; k++) {
+                        $(document.getElementById('menuForm:menuTable:' + k + ':menuDiv')).puiaccordion({
+                            change: function (event, panel) {
+                                try {
+                                    for (i = 0; i < 11; i++) {
+                                        if (event.target.id != 'menuForm:menuTable:' + i + ':menuDiv') {
+                                            $(document.getElementById('menuForm:menuTable:' + i + ':menuDiv')).puiaccordion('unselect', 0);
+                                        }
+                                    }
+                                } catch (e) {
+                                }
+                            }
+                        });
+                        if (k != indexCat) {
+                            $(document.getElementById('menuForm:menuTable:' + k + ':menuDiv')).puiaccordion('unselect', 0);
+                        } else {
+                        }
+                    }
+                } catch (e) {
+                }
+
+                if (document.getElementById('menuForm:menuTable') != null) {
+                    document.getElementById('menuForm:menuTable').style.display = '';
+                }
+            });
+        </script>
+        <style>
+            #title>h3 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+        <div style="margin-left: 5rem;">
+            <div class="print">
+                <a href="javascript:printPage()">
+                    <img src="/kku/images/ar/print.png" style="border:0px; filter:brightness(0) saturate(100%) invert(40%) sepia(29%) saturate(472%) hue-rotate(83deg) brightness(101%) contrast(88%)" />
+                </a>
+            </div>
+            <div class="help">
+                
+            </div>
+            <div class="plan" style="width: revert">
+                <span id="title"><h3>الرئيسية</h3></span>
+            </div>
+        </div>
+        <br>
+
+    
+
+
+
+
+
+<script type="text/javascript" src="/kku/include/js/common/ajaxHome.js"></script>
+<script language="JavaScript" type="text/javascript">
+    function spanFunction(id, image) {
+        if (document.getElementById(id).style.display == "none") {
+            document.getElementById(id).style.display = "";
+            document.getElementById(image).src = '/kku/images/blueDownAr.gif';
+            onAjaxHome(id + "_Student", "");
+        } else {
+            document.getElementById(id).style.display = "none";
+            document.getElementById(image).src = '/kku/images/blueAr.gif';
+            onAjaxHome(id + "_Student", "none");
+        }
+    }
+
+    function removeFavServiceScript(serviceId) {
+        document.getElementById("myForm:serviceIdHid").value = serviceId;
+        document.getElementById('myForm:removeFavServiceId').onclick();
+        return false;
+    }
+
+    function insertFavServiceScript(serviceId) {
+        document.getElementById("myForm:serviceIdHid").value = serviceId;
+        document.getElementById('myForm:insertFavServiceId').onclick();
+        return false;
+    }
+</script>
+<style>
+    .studentServices .icon img {
+        height: 64px;
+    }
+    .ROW3, ROW4 {
+        text-align: justify !important;
+    }
+
+    .item:hover .unfav-img, .item:hover .fav-img {
+        display: block;
+    }
+
+    .fav-img:hover {
+        background: url(/kku/images/fav-solid.svg) left top no-repeat;
+    }
+
+    .unfav-img:hover {
+        filter: invert(17%) sepia(45%) saturate(5484%) hue-rotate(348deg) brightness(101%) contrast(95%);
+    }
+
+    .fav-img:hover, .unfav-img:hover {
+        cursor: pointer;
+    }
+
+    .unfav-img, .fav-img {
+        display: none;
+        position: absolute;
+        height: 2rem;
+        width: 2rem;
+        filter: invert(44%) sepia(29%) saturate(446%) hue-rotate(83deg) brightness(94%) contrast(92%);
+    }
+</style>
+
+
+
+<form id="myForm" name="myForm" method="post" action="/kku/ui/student/homeIndex.faces" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="myForm" value="myForm" />
+<a id="myForm:refreshommandLink" href="#" onclick="mojarra.jsfcljs(document.getElementById('myForm'),{'myForm:refreshommandLink':'myForm:refreshommandLink'},'');return false"></a><input id="myForm:hiddenValue" type="hidden" name="myForm:hiddenValue" value="true" /><a id="myForm:catServiceId" href="#" onclick="mojarra.jsfcljs(document.getElementById('myForm'),{'myForm:catServiceId':'myForm:catServiceId'},'');return false"></a>
+    
+    
+
+
+    
+
+    <div class="row studentServices mx-0 favstudentServices" style="border-radius: 10px; margin-top: 1rem;">
+        <div class="col-12">
+            <h2 class="servicesHeader">الخدمات المفضلة</h2>
+        </div>
+        
+                
+                    <style>
+                        .favstudentServices {
+                            display: none;
+                        }
+                    </style>
+                
+                <center><strong><span id="myForm:NO_FAV_SERVICES" style="font-family: helvetica-NAL,Tahoma,Geneva,sans-serif;">لا يوجد خدمات مفضلة</span></strong></center>
+                
+                <a id="myForm:removeFavServiceId" href="#" onclick="mojarra.jsfcljs(document.getElementById('myForm'),{'myForm:removeFavServiceId':'myForm:removeFavServiceId'},'');return false"></a><input id="myForm:serviceIdHid" type="hidden" name="myForm:serviceIdHid" value="" />
+                
+        
+    </div>
+    <div class="row studentServices mx-0" style="border-radius: 10px; margin-top: 1rem;">
+
+
+
+        
+            
+                
+                    <div class="col-lg-3 col-md-6 catagory">
+                        <div class="item not-fav">
+                            <a href="#" onclick="jsf.util.chain(this,event,'javascript:catServices(\'1\', \'الخدمات الأكاديمية\'); return false;','mojarra.jsfcljs(document.getElementById(\'myForm\'),{\'myForm:j_id_id270\':\'myForm:j_id_id270\'},\'\')');return false">
+                                <div class="icon text-center">
+                                    <img src="/kku/images/NewIcons/cat1.png"/>
+                                </div>
+                                <h2>
+                                    الخدمات الأكاديمية
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-lg-3 col-md-6 catagory">
+                        <div class="item not-fav">
+                            <a href="#" onclick="jsf.util.chain(this,event,'javascript:catServices(\'3\', \'الجدول والخطة الدراسية\'); return false;','mojarra.jsfcljs(document.getElementById(\'myForm\'),{\'myForm:j_id_id270j_id_1\':\'myForm:j_id_id270j_id_1\'},\'\')');return false">
+                                <div class="icon text-center">
+                                    <img src="/kku/images/NewIcons/cat3.png"/>
+                                </div>
+                                <h2>
+                                    الجدول والخطة الدراسية
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-lg-3 col-md-6 catagory">
+                        <div class="item not-fav">
+                            <a href="#" onclick="jsf.util.chain(this,event,'javascript:catServices(\'2\', \'شخصي\'); return false;','mojarra.jsfcljs(document.getElementById(\'myForm\'),{\'myForm:j_id_id270j_id_2\':\'myForm:j_id_id270j_id_2\'},\'\')');return false">
+                                <div class="icon text-center">
+                                    <img src="/kku/images/NewIcons/cat2.png"/>
+                                </div>
+                                <h2>
+                                    شخصي
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-lg-3 col-md-6 catagory">
+                        <div class="item not-fav">
+                            <a href="#" onclick="jsf.util.chain(this,event,'javascript:catServices(\'7\', \'التقارير\'); return false;','mojarra.jsfcljs(document.getElementById(\'myForm\'),{\'myForm:j_id_id270j_id_3\':\'myForm:j_id_id270j_id_3\'},\'\')');return false">
+                                <div class="icon text-center">
+                                    <img src="/kku/images/NewIcons/cat7.png"/>
+                                </div>
+                                <h2>
+                                    التقارير
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-lg-3 col-md-6 catagory">
+                        <div class="item not-fav">
+                            <a href="#" onclick="jsf.util.chain(this,event,'javascript:catServices(\'9\', \'التواصل والدعم\'); return false;','mojarra.jsfcljs(document.getElementById(\'myForm\'),{\'myForm:j_id_id270j_id_4\':\'myForm:j_id_id270j_id_4\'},\'\')');return false">
+                                <div class="icon text-center">
+                                    <img src="/kku/images/NewIcons/cat9.png"/>
+                                </div>
+                                <h2>
+                                    التواصل والدعم
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+            <input id="myForm:selectedCatigoryIdHid" type="hidden" name="myForm:selectedCatigoryIdHid" value="" /><input id="myForm:selectedCatigoryDescHid" type="hidden" name="myForm:selectedCatigoryDescHid" value="" />
+            
+        
+    </div>
+    
+<input type="hidden" name="javax.faces.ViewState" id="j_id_id0:javax.faces.ViewState:6" value="-2368305437025971535:5289742936359703193" autocomplete="off" />
+</form>
+
+<script>
+    function catServices(id, name) {
+        document.getElementById('myForm:selectedCatigoryIdHid').value = id;
+        document.getElementById('myForm:selectedCatigoryDescHid').value = name;
+        document.getElementById('myForm:catServiceId').onclick();
+    }
+</script>
+    
+
+
+</div>
+</div>
+<script>window.onload = rowOverFlow;</script>
+<div style="clear: both"></div>
+</div>
+</div>
+<div id="footer">
+    <div id="footer-conntent">
+        <div id="footer-middle-elemts">
+            <div class="f-logo">
+                <img src="/kku/images/kku-logo-min.png" alt="personIcon" style="filter: brightness(0) invert(1); height: 3.8rem;"/>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
