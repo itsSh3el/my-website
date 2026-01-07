@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>لوحة التحكم</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Tahoma;
+  background:#f4f6f7;
+  color:#333;
+}
+
+/* الهيدر */
+.header{
+  background:#fff;
+  border-bottom:4px solid #2f6f4e;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.header .right span{
+  margin-left:20px;
+  font-size:14px;
+  color:#555;
+}
+.header .right .active{
+  color:#2f6f4e;
+  font-weight:bold;
+}
+.header h2{
+  margin:0;
+  color:#2f6f4e;
+}
+
+/* بطاقة البيانات */
+.info-card{
+  width:92%;
+  margin:20px auto;
+  background:#fff;
+  border-radius:10px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+}
+.info strong{color:#2f6f4e}
+.gpa{font-size:18px;font-weight:bold}
+
+/* شريط الخدمات */
+.nav{
+  width:92%;
+  margin:auto;
+  background:#5f8f73;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:8px;
+}
+.nav span{
+  margin-left:25px;
+  font-size:14px;
+}
+
+/* التنبيه */
+.notice{
+  width:92%;
+  margin:20px auto;
+  background:#fff;
+  border:2px solid #5f8f73;
+  border-radius:10px;
+  padding:16px;
+  color:#2f6f4e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* البطاقات */
+.dashboard{
+  width:92%;
+  margin:20px auto;
+  background:#fff;
+  border-radius:10px;
+  padding:30px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+.card{
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  padding:35px 10px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+}
+.card:hover{
+  background:#f3f8f5;
+  transform:translateY(-4px);
+}
+.card .icon{
+  font-size:38px;
+  color:#5f8f73;
+  margin-bottom:10px;
+}
+.card p{
+  margin:0;
+  font-size:15px;
+}
+.card.wide{
+  grid-column:span 2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- الهيدر -->
+<div class="header">
+  <div class="right">
+    <span>English</span>
+    <span>خروج</span>
+    <span class="active">الرئيسية</span>
+    <span>بياناتي</span>
+  </div>
+  <h2>موقعي الشخصي</h2>
+</div>
+
+<!-- بطاقة المعلومات -->
+<div class="info-card">
+  <div class="info">👤 الاسم: <strong>اسمك هنا</strong></div>
+  <div class="info">🆔 الرقم: <strong>445807980</strong></div>
+  <div class="info">🎓 التخصص: <strong>نظم معلومات</strong></div>
+  <div class="info">📊 المعدل: <strong class="gpa">4.64</strong></div>
+  <div class="info">📌 الحالة: <strong>منتظم</strong></div>
+  <div class="info">🎓 الدرجة: <strong>بكالوريوس</strong></div>
+  <div class="info">📍 الموقع: <strong>المدينة الجامعية</strong></div>
+  <div class="info">👨‍🏫 المرشد: <strong>—</strong></div>
+</div>
+
+<!-- شريط الخدمات -->
+<div class="nav">
+  <span>الخدمات الأكاديمية</span>
+  <span>الجدول والخطة</span>
+  <span>شخصي</span>
+  <span>التقارير</span>
+  <span>التواصل والدعم</span>
+</div>
+
+<!-- تنبيه -->
+<div class="notice">
+  <div>📩 دليل استخدام الموقع</div>
+  <div>اضغط هنا</div>
+</div>
+
+<!-- البطاقات -->
+<div class="dashboard">
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📄</div>
+      <p>التقارير</p>
+    </div>
+    <div class="card">
+      <div class="icon">👤</div>
+      <p>شخصي</p>
+    </div>
+    <div class="card">
+      <div class="icon">📘</div>
+      <p>الجدول والخطة الدراسية</p>
+    </div>
+    <div class="card">
+      <div class="icon">🖥</div>
+      <p>الخدمات الأكاديمية</p>
+    </div>
+    <div class="card wide">
+      <div class="icon">✉</div>
+      <p>التواصل والدعم</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
